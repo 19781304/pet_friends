@@ -68,7 +68,7 @@ def test_filter_pets_by_my_pets():
     assert status == 200
     assert 'pets' in result, "Ответ не содержит ключ 'pets'"
 
-    # Проверяем, что список питомцев не содержит чужих
+
     assert all('id' in pet for pet in result['pets']), "В данных о питомцах отсутствует 'id'"
 
 
