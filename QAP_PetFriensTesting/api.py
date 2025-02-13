@@ -43,11 +43,10 @@ class PetFriends:
 
         response = requests.post(url, headers=headers, data=data, files=files)
 
-        # ✅ Обрабатываем JSON
         try:
-            result = response.json()  # Парсим JSON
+            result = response.json()  
         except ValueError:
-            result = response.text  # Если не JSON, сохраняем текст ошибки
+            result = response.text  
 
         return response.status_code, result
 
